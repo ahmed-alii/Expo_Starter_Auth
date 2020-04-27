@@ -1,15 +1,25 @@
-import * as React from 'react';
-import {StyleSheet, Text} from 'react-native';
+import React, { Component } from "react";
+import {StyleSheet, Text, Button} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 
-export default function LinksScreen() {
-    return (
-        <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-            <Text>
-                LOGIN SCREEN
-            </Text>
-        </ScrollView>
-    );
+export default class ResetPassword extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return (
+            <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
+                <Text>
+                    Forget Password SCREEN
+                </Text>
+                <Button title={"Login"} onPress={() =>this.props.navigation.navigate("Login")}/>
+                <Button title={"Register"} onPress={() =>this.props.navigation.navigate("Register")}/>
+            </ScrollView>
+        );
+    }
+
+
 }
 
 const styles = StyleSheet.create({
